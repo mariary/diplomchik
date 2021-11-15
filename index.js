@@ -54,9 +54,13 @@ function main_equations() {
     }
     init_vars()
 
-    UN[num_x_input.value][0] = 1
-
     const solve_equation = () => {
+        for (let n = 0; n < nt; n++) {
+            for (let i = 0; i < nx; i++) {
+                UN[i][n] = 0
+            }
+        }
+        UN[num_x_input.value][0] = 1
         for (let i = a; i <= b;
              i += dx
         ) {
